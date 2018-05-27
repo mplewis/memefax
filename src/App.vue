@@ -25,14 +25,14 @@ html, body, #app, main
   height: 100%
 
 body
-  font-family: core-font
   max-width: 800px
   margin: 0 auto
-  background: minty-green
+  background: black-pearl
+  font-family: core-font
   color: white
 
 main
-  background: green-teal
+  background: good-night
   padding: horiz-padding
 
 h1, h2, h3, h4, h5, h6

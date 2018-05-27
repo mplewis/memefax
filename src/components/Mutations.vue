@@ -39,10 +39,10 @@ export default {
   .checkbox
     display: block
     width: box-size
-    background: free-speech-blue
+    background: minty-green
     text-align: center
   .nickname
     padding-left: 15px
-    background: dark-periwinkle
+    background: green-teal
     flex: 1
 </style>

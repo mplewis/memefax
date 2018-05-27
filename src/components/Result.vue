@@ -21,5 +21,5 @@ export default {
   full-width-padded()
   pad-vert()
   display: block
-  background-color: good-night
+  background-color: dark-periwinkle
 </style>

@@ -26,7 +26,7 @@ export default {
   font-size: big-text-size
   font-family: core-font
   color: white
-  background-color: megaman
+  background-color: sizzling-red
   border: none
   &::placeholder
     color: rgba(255, 255, 255, 0.7)
