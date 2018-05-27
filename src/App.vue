@@ -38,12 +38,17 @@ main
 
 h1, h2, h3, h4, h5, h6
   font-family: 'Rokkitt', sans-serif
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 1)
 
 .title
   margin-top: 0
 
 h1
   font-size: 48px
+
+p
+  font-size: 28px
+  margin-top: 0
 
 h1, p
   margin-bottom: 0

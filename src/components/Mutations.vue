@@ -1,15 +1,51 @@
 <template>
   <div>
     <h1>Mutations</h1>
-    <div>
-      <input type="checkbox" id="clapify">
-      <label for="clapify">Clapify</label>
+    <div class="mutation" @click="toggle">
+      <div class="checkbox">{{checked ? '✓' : ''}}</div>
+      <div class="nickname">{{nickname}}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Mutations'
+  name: 'Mutations',
+  data: () => ({
+    checked: true,
+    nickname: 'Clapify'
+  }),
+  methods: {
+    toggle () {
+      this.checked = !this.checked
+    }
+  }
 }
 </script>
+
+<style lang="stylus" scoped>
+box-size = 50px
+font-size = 28px
+
+dark-periwinkle = #575fcf
+free-speech-blue = #3c40c6
+
+.mutation
+  display: flex
+  align-items: center
+  cursor: pointer;
+  user-select: none
+  .checkbox, .nickname
+    height: box-size
+    line-height: box-size
+    font-size: font-size
+  .checkbox
+    display: block
+    width: box-size
+    background: free-speech-blue
+    text-align: center
+  .nickname
+    padding-left: 15px
+    background: dark-periwinkle
+    flex: 1
+</style>
