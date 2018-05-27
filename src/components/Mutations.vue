@@ -24,11 +24,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-box-size = 50px
-font-size = 28px
-
-dark-periwinkle = #575fcf
-free-speech-blue = #3c40c6
+@import '../assets/global.styl'
 
 .mutation
   display: flex
@@ -38,7 +34,7 @@ free-speech-blue = #3c40c6
   .checkbox, .nickname
     height: box-size
     line-height: box-size
-    font-size: font-size
+    font-size: big-text-size
   .checkbox
     display: block
     width: box-size

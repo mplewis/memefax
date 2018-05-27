@@ -15,18 +15,17 @@ export default {
 </script>
 
 <style lang="stylus">
+@import './assets/global.styl'
 @import url('https://fonts.googleapis.com/css?family=Lato|Rokkitt:400,800')
 
-// https://flatuicolors.com/palette/se
-minty-green = #0be881
-green-teal = #05c46b
+*
+  box-sizing: border-box
 
 html, body, #app, main
   height: 100%
-  box-sizing: border-box
 
 body
-  font-family: 'Lato', sans-serif
+  font-family: core-font
   max-width: 800px
   margin: 0 auto
   background: minty-green
@@ -37,7 +36,7 @@ main
   padding: 20px
 
 h1, h2, h3, h4, h5, h6
-  font-family: 'Rokkitt', sans-serif
+  font-family: emph-font
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 1)
 
 .title
@@ -47,7 +46,7 @@ h1
   font-size: 48px
 
 p
-  font-size: 28px
+  font-size: big-text-size
   margin-top: 0
 
 h1, p
