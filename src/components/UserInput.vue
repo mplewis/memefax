@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>UserInput</h1>
-    <input class="big-input" placeholder="Enter your text here to ruin it" />
+    <div class="wider">
+      <input class="big-input" placeholder="Enter your text here to ruin it" />
+    </div>
   </div>
 </template>
 
@@ -14,14 +16,18 @@ export default {
 <style lang="stylus" scoped>
 @import '../assets/global.styl'
 
+.wider
+  full-width()
+
 .big-input
+  pad-width-inside()
+  pad-vert()
   width: 100%
   font-size: big-text-size
   font-family: core-font
-  border: none
-  padding: 8px
-  background-color: megaman
   color: white
+  background-color: megaman
+  border: none
   &::placeholder
     color: rgba(255, 255, 255, 0.7)
 </style>

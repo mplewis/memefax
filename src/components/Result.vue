@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Result</h1>
-    <p>Clapified👏text</p>
+    <div class="result">
+      <p>Clapified👏text</p>
+    </div>
     <button>Copy</button>
   </div>
 </template>
@@ -11,3 +13,13 @@ export default {
   name: 'Result'
 }
 </script>
+
+<style lang="stylus" scoped>
+@import '../assets/global.styl'
+
+.result
+  full-width-padded()
+  pad-vert()
+  display: block
+  background-color: good-night
+</style>

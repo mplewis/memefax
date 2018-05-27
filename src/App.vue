@@ -33,7 +33,7 @@ body
 
 main
   background: green-teal
-  padding: 20px
+  padding: horiz-padding
 
 h1, h2, h3, h4, h5, h6
   font-family: emph-font

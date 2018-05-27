@@ -17,8 +17,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-p
-  color: red
-</style>

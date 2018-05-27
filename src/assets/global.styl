@@ -1,3 +1,5 @@
+horiz-padding = 20px;
+vert-padding = 8px;
 box-size = 50px;
 big-text-size = 28px;
 core-font = 'Lato', sans-serif;
@@ -9,3 +11,25 @@ minty-green = #0be881;
 green-teal = #05c46b;
 megaman = #4bcffa;
 spiro-disco-ball = #0fbcf9;
+good-night = #485460;
+black-pearl = #1e272e;
+
+full-width() {
+  margin-left: -1 * horiz-padding;
+  margin-right: -1 * horiz-padding;
+}
+
+pad-width-inside() {
+  padding-left: horiz-padding;
+  padding-right: horiz-padding;
+}
+
+full-width-padded() {
+  full-width();
+  pad-width-inside();
+}
+
+pad-vert() {
+  padding-top: vert-padding;
+  padding-bottom: vert-padding;
+}

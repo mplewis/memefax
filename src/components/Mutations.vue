@@ -27,9 +27,10 @@ export default {
 @import '../assets/global.styl'
 
 .mutation
+  full-width()
   display: flex
   align-items: center
-  cursor: pointer;
+  cursor: pointer
   user-select: none
   .checkbox, .nickname
     height: box-size
