@@ -1,4 +1,4 @@
-import { smallCaps, superscript, upsideDown } from './charmaps'
+import { bubble, smallCaps, superscript, upsideDown, wide } from './charmaps'
 
 function clapifyWords (text, emoji) {
   return text.replace(/\s+/g, emoji)
@@ -37,20 +37,28 @@ function reverse (text) {
 
 export default [
   {
-    name: 'Clapify',
+    name: 'Clap👏ify',
     mutator: clapify,
     active: true
   },
   {
-    name: 'Small Caps',
+    name: 'Ｗｉｄｅｔｅｘｔ',
+    mutator: mapChars(wide)
+  },
+  {
+    name: 'Sᴍᴀʟʟ Cᴀᴘs',
     mutator: mapChars(smallCaps)
   },
   {
-    name: 'Superscript',
+    name: 'ˢᵘᵖᵉʳˢᶜʳᶦᵖᵗ',
     mutator: mapChars(superscript)
   },
   {
-    name: 'Flipped',
+    name: 'pǝddᴉๅꓞ',
     mutator: text => mapChars(upsideDown)(reverse(text))
+  },
+  {
+    name: 'Ⓑⓤⓑⓑⓛⓔ',
+    mutator: mapChars(bubble)
   }
 ]
