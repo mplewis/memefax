@@ -1,23 +1,45 @@
 <template>
   <div>
     <h1>Mutations</h1>
-    <div class="mutation" @click="toggle">
-      <div class="checkbox">{{checked ? '✓' : ''}}</div>
-      <div class="nickname">{{nickname}}</div>
-    </div>
+    <Checkbox
+      v-for="(mutation, index) in mutations"
+      :key="index"
+      :name="mutation.name"
+      :checked="mutation.active"
+      @toggle="state => toggle(index, state)"
+    />
   </div>
 </template>
 
 <script>
+import Checkbox from './Checkbox'
+import VueTypes from 'vue-types'
+
 export default {
   name: 'Mutations',
-  data: () => ({
-    checked: true,
-    nickname: 'Clapify'
-  }),
+  components: { Checkbox },
+  props: { mutations: VueTypes.array.isRequired },
+  data: () => ({ activeMutationIndices: null }),
+  mounted () {
+    this.activeMutationIndices = new Set(
+      this.mutations
+        .filter(m => m.active)
+        .map((_, index) => index)
+    )
+    this.update()
+  },
   methods: {
-    toggle () {
-      this.checked = !this.checked
+    toggle (index, state) {
+      state
+        ? this.activeMutationIndices.add(index)
+        : this.activeMutationIndices.delete(index)
+      this.update()
+    },
+    update () {
+      this.$emit(
+        'activeMutations',
+        this.mutations.filter((_, index) => this.activeMutationIndices.has(index))
+      )
     }
   }
 }
