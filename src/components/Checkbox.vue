@@ -1,5 +1,5 @@
 <template>
-  <div class="container" @click="toggle">
+  <div :class="['container', color]" @click="toggle">
     <div class="checkbox">{{state ? '✓' : ''}}</div>
     <div class="name">{{name}}</div>
   </div>
@@ -10,7 +10,8 @@ export default {
   name: 'Checkbox',
   props: {
     name: { type: String, required: true },
-    checked: { type: Boolean, default: false }
+    checked: { type: Boolean, default: false },
+    color: { type: String, default: 'grey' }
   },
   data: () => ({ state: null }),
   mounted () { this.state = !!this.checked },
@@ -39,10 +40,45 @@ export default {
   .checkbox
     display: block
     width: box-size
-    background: minty-green
     text-align: center
   .name
     padding-left: 15px
-    background: green-teal
     flex: 1
+    color: black
+  &.grey
+    .checkbox
+      background: hint-of-elusive-blue
+    .name
+      background: london-square
+  &.red
+    .checkbox
+      background: sunset-orange
+    .name
+      background: red-orange
+      color: white
+  &.orange
+    .checkbox
+      background: narenji-orange
+    .name
+      background: chrome-yellow
+  &.yellow
+    .checkbox
+      background: yriel-yellow
+    .name
+      background: vibrant-yellow
+  &.green
+    .checkbox
+      background: minty-green
+    .name
+      background: green-teal
+  &.teal
+    .checkbox
+      background: fresh-turquoise
+    .name
+      background: jade-dust
+  &.blue
+    .checkbox
+      background: megaman
+    .name
+      background: spiro-disco-ball
 </style>

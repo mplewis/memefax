@@ -5,6 +5,7 @@
       v-for="(mutation, index) in mutations"
       :key="index"
       :name="mutation.name"
+      :color="mutation.color"
       :checked="mutation.active"
       @toggle="state => toggle(index, state)"
     />
@@ -23,8 +24,9 @@ export default {
   mounted () {
     this.activeMutationIndices = new Set(
       this.mutations
+        .map((m, index) => ({index, active: m.active}))
         .filter(m => m.active)
-        .map((_, index) => index)
+        .map(({index}) => index)
     )
     this.update()
   },

@@ -29,8 +29,7 @@ function mapChars (charMap) {
 }
 
 function reverse (text) {
-  return text
-    .split('')
+  return Array.from(text)
     .reverse()
     .join('')
 }
@@ -39,26 +38,33 @@ export default [
   {
     name: 'Clap👏ify',
     mutator: clapify,
+    color: 'red',
     active: true
   },
   {
     name: 'Ｗｉｄｅｔｅｘｔ',
-    mutator: mapChars(wide)
+    mutator: mapChars(wide),
+    color: 'orange'
   },
   {
     name: 'Sᴍᴀʟʟ Cᴀᴘs',
-    mutator: mapChars(smallCaps)
+    mutator: mapChars(smallCaps),
+    color: 'yellow',
+    active: true
   },
   {
     name: 'ˢᵘᵖᵉʳˢᶜʳᶦᵖᵗ',
-    mutator: mapChars(superscript)
+    mutator: mapChars(superscript),
+    color: 'green'
   },
   {
     name: 'pǝddᴉๅꓞ',
-    mutator: text => mapChars(upsideDown)(reverse(text))
+    mutator: text => mapChars(upsideDown)(reverse(text)),
+    color: 'teal'
   },
   {
     name: 'Ⓑⓤⓑⓑⓛⓔ',
-    mutator: mapChars(bubble)
+    mutator: mapChars(bubble),
+    color: 'blue'
   }
 ]
