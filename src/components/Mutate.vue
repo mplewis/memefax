@@ -1,8 +1,8 @@
 <template>
   <div>
-    <UserInput />
-    <Mutations :mutations="mutations" @activeMutations="mutate" />
-    <Result />
+    <UserInput @text="text => this.text = text" />
+    <Mutations :mutations="mutations" @activeMutations="activeMutations => this.activeMutations = activeMutations" />
+    <Result :text="mutatedText" />
   </div>
 </template>
 
@@ -12,19 +12,16 @@ import Mutations from './Mutations'
 import Result from './Result'
 import mutations from '@/mutations'
 
-function apply (mutations, text) {
-  return mutations.reduce(
-    (text, mutation) => mutation.mutator(text),
-    text
-  )
-}
-
 export default {
   components: { UserInput, Mutations, Result },
-  data: () => ({ mutations }),
-  methods: {
-    mutate (activeMutations) {
-      console.log(apply(activeMutations, 'qwerty uiop'))
+  data: () => ({
+    text: '',
+    activeMutations: [],
+    mutations
+  }),
+  computed: {
+    mutatedText (activeMutations) {
+      return this.activeMutations.reduce((text, mutation) => mutation.mutator(text), this.text)
     }
   }
 }

@@ -1,3 +1,5 @@
+import { smallCaps, superscript, upsideDown } from './charmaps'
+
 function clapifyWords (text, emoji) {
   return text.replace(/\s+/g, emoji)
 }
@@ -13,6 +15,26 @@ function clapify (text) {
     : clapifyWords(text, emoji)
 }
 
+function mapChars (charMap) {
+  return function (text) {
+    return text
+      .split('')
+      .map(char => {
+        const match = charMap[char]
+        if (match) return match
+        return char
+      })
+      .join('')
+  }
+}
+
+function reverse (text) {
+  return text
+    .split('')
+    .reverse()
+    .join('')
+}
+
 export default [
   {
     name: 'Clapify',
@@ -20,8 +42,15 @@ export default [
     active: true
   },
   {
-    name: 'Upcase',
-    mutator: text => text.toUpperCase(),
-    active: false
+    name: 'Small Caps',
+    mutator: mapChars(smallCaps)
+  },
+  {
+    name: 'Superscript',
+    mutator: mapChars(superscript)
+  },
+  {
+    name: 'Flipped',
+    mutator: text => mapChars(upsideDown)(reverse(text))
   }
 ]

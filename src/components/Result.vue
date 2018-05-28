@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h1>Result</h1>
+    <h1>3: Look at what you did</h1>
     <div class="result">
-      <p>Clapified👏text</p>
+      <p v-if="text === ''" class="dim">Type some text to get started</p>
+      <p v-else>{{text}}</p>
     </div>
     <button>Copy</button>
   </div>
@@ -10,7 +11,8 @@
 
 <script>
 export default {
-  name: 'Result'
+  name: 'Result',
+  props: { text: { type: String } }
 }
 </script>
 
@@ -22,4 +24,7 @@ export default {
   pad-vert()
   display: block
   background-color: dark-periwinkle
+
+.dim
+  dim-white()
 </style>

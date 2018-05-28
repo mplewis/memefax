@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Mutations</h1>
+    <h1>2: Pick some mutations</h1>
     <Checkbox
       v-for="(mutation, index) in mutations"
       :key="index"

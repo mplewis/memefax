@@ -1,8 +1,12 @@
 <template>
   <div>
-    <h1>UserInput</h1>
-    <div class="wider">
-      <input class="big-input" placeholder="Enter your text here to ruin it" />
+    <h1>1: Type some text</h1>
+    <div class="user-input">
+      <input
+        class="big-input"
+        placeholder="Enter your text here to ruin it"
+        v-on:keyup="$emit('text', $event.target.value)"
+      />
     </div>
   </div>
 </template>
@@ -16,7 +20,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../assets/global.styl'
 
-.wider
+.user-input
   full-width()
 
 .big-input
@@ -29,5 +33,5 @@ export default {
   background-color: sizzling-red
   border: none
   &::placeholder
-    color: rgba(255, 255, 255, 0.7)
+    dim-white()
 </style>
