@@ -45,14 +45,14 @@ export default {
 
 .copy-button
   font-family: core-font
-  font-size: big-text-size
+  font-size: med-text-size
   color: black-pearl
   background: elusive-white
-  height: 50px
   margin-top: 15px
   border: none
-  border-radius: big-text-size
-  padding: 1 * big-text-size
+  border-radius: med-text-size
+  height: med-text-size * 2
+  padding: med-text-size
   line-height: 0
   box-shadow: deep-shadow
 </style>

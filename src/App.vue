@@ -1,9 +1,23 @@
 <template>
   <div id="app">
     <main>
-      <h1 class="title">memefax.website</h1>
+      <h1 class="title">
+        <a href="/">memefax.website</a>
+      </h1>
       <p>Unicode was a mistake.</p>
       <router-view />
+      <div class="credits">
+        <p>
+          <span>
+            Made by
+            <a href="http://mplewis.com">Matt Lewis</a>
+          </span>
+          <span>
+            Fork this on
+            <a href="https://github.com/mplewis/memefax">GitHub</a>
+          </span>
+        </p>
+      </div>
     </main>
   </div>
 </template>
@@ -25,13 +39,13 @@ html, body, #app, main
   height: 100%
 
 body
-  max-width: 800px
+  max-width: 600px
   margin: 0 auto
   background: black-pearl
   font-family: core-font
   color: white
 
-main
+#app
   background: good-night
   padding: horiz-padding
 
@@ -40,19 +54,34 @@ h1, h2, h3, h4, h5, h6
   font-family: emph-font
   text-shadow: light-shadow
 
-.title
-  margin-top: 0
-
 h1
-  font-size: 48px
+  font-size: lg-text-size
 
 p
-  font-size: big-text-size
+  font-size: med-text-size
   margin-top: 0
 
 h1, p
   margin-bottom: 0
 
+a
+  color: inherit
+
 input
   border-radius: 0
+
+.title
+  margin-top: 0
+  a
+    text-decoration: inherit
+
+.credits
+  margin-top: 80px
+  margin-bottom: section-spacing
+  opacity: 0.7
+  text-align: center
+  p
+    font-size: sm-text-size
+  *+*
+    padding-left: 20px
 </style>

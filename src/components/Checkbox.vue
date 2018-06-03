@@ -36,7 +36,7 @@ export default {
   .checkbox, .name
     height: box-size
     line-height: box-size
-    font-size: big-text-size
+    font-size: med-text-size
   .checkbox
     display: block
     width: box-size

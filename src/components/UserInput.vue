@@ -27,7 +27,7 @@ export default {
   pad-width-inside()
   pad-vert()
   width: 100%
-  font-size: big-text-size
+  font-size: med-text-size
   font-family: core-font
   color: white
   background-color: sizzling-red
