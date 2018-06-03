@@ -41,6 +41,7 @@ export default {
     display: block
     width: box-size
     text-align: center
+    color: black
   .name
     padding-left: 15px
     flex: 1
@@ -55,7 +56,6 @@ export default {
       background: sunset-orange
     .name
       background: red-orange
-      color: white
   &.orange
     .checkbox
       background: narenji-orange
