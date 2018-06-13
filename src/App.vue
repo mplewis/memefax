@@ -35,11 +35,8 @@ export default {
 *
   box-sizing: border-box
 
-html, body, #app, main
-  height: 100%
-
 body
-  max-width: 600px
+  max-width: app-width
   margin: 0 auto
   background: black-pearl
   font-family: core-font
@@ -48,6 +45,9 @@ body
 #app
   background: good-night
   padding: horiz-padding
+  @media (min-width: app-width)
+    margin-top: app-vert-margin
+    margin-bottom: app-vert-margin
 
 h1, h2, h3, h4, h5, h6
   margin-top: section-spacing
@@ -76,7 +76,7 @@ input
     text-decoration: inherit
 
 .credits
-  margin-top: 80px
+  margin-top: section-spacing
   margin-bottom: section-spacing
   opacity: 0.7
   text-align: center
