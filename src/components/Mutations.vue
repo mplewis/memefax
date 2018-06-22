@@ -6,14 +6,15 @@
       :key="index"
       :name="mutation.name"
       :color="colors[index % colors.length]"
-      :checked="mutation.active"
-      @toggle="state => toggle(index, state)"
+      :checked="checked(index)"
+      @toggle="toggle(index)"
     />
   </div>
 </template>
 
 <script>
 import Checkbox from './Checkbox'
+import lastUsed from '@/utils/last_used'
 import VueTypes from 'vue-types'
 
 const colors = ['orange', 'yellow', 'green', 'teal', 'blue']
@@ -24,26 +25,32 @@ export default {
   props: { mutations: VueTypes.array.isRequired },
   data: () => ({ colors, activeMutationIndices: null }),
   mounted () {
-    this.activeMutationIndices = new Set(
-      this.mutations
-        .map((m, index) => ({index, active: m.active}))
-        .filter(m => m.active)
-        .map(({index}) => index)
-    )
+    this.activeMutationIndices = new Set(lastUsed.current())
     this.update()
   },
   methods: {
-    toggle (index, state) {
-      state
+    toggle (index) {
+      const newCheckedState = !this.activeMutationIndices.has(index)
+      newCheckedState
         ? this.activeMutationIndices.add(index)
         : this.activeMutationIndices.delete(index)
       this.update()
+      lastUsed.update(index, newCheckedState)
     },
     update () {
+      // vue can't observe changes to sets
+      const ami = this.activeMutationIndices
+      this.activeMutationIndices = null
+      this.activeMutationIndices = ami
+
       this.$emit(
         'activeMutations',
-        this.mutations.filter((_, index) => this.activeMutationIndices.has(index))
+        this.mutations.filter((_, index) => this.checked(index))
       )
+    },
+    checked (index) {
+      if (!this.activeMutationIndices) return false
+      return !!this.activeMutationIndices.has(index)
     }
   }
 }

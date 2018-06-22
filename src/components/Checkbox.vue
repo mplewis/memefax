@@ -1,6 +1,6 @@
 <template>
-  <div :class="['container', color]" @click="toggle">
-    <div class="checkbox">{{state ? '✓' : ''}}</div>
+  <div :class="['container', color]" @click="$emit('toggle')">
+    <div class="checkbox">{{checked ? '✓' : ''}}</div>
     <div class="name">{{name}}</div>
   </div>
 </template>
@@ -9,17 +9,9 @@
 export default {
   name: 'Checkbox',
   props: {
+    checked: { type: Boolean, required: true },
     name: { type: String, required: true },
-    checked: { type: Boolean, default: false },
     color: { type: String, default: 'grey' }
-  },
-  data: () => ({ state: null }),
-  mounted () { this.state = !!this.checked },
-  methods: {
-    toggle () {
-      this.state = !this.state
-      this.$emit('toggle', this.state)
-    }
   }
 }
 </script>

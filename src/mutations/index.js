@@ -17,8 +17,7 @@ import spongebob from './spongebob'
 export default [
   {
     name: 'Clap👏ify',
-    mutator: clapify,
-    active: true
+    mutator: clapify
   },
   {
     name: 'Ｗｉｄｅｔｅｘｔ',
@@ -26,8 +25,7 @@ export default [
   },
   {
     name: 'Sᴍᴀʟʟ Cᴀᴘs',
-    mutator: mapChars(smallCaps),
-    active: true
+    mutator: mapChars(smallCaps)
   },
   {
     name: 'ˢᵘᵖᵉʳˢᶜʳᶦᵖᵗ',
