@@ -30,7 +30,7 @@ export default {
 
 <style lang="stylus">
 @import './assets/global.styl'
-@import url('https://fonts.googleapis.com/css?family=Lato|Rokkitt:400,800')
+@import url('https://fonts.googleapis.com/css?family=Lato|Rokkitt:400,800|Space+Mono')
 
 *
   box-sizing: border-box

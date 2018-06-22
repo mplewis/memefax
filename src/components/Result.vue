@@ -39,6 +39,8 @@ export default {
   pad-vert()
   display: block
   background-color: dark-periwinkle
+  font-family: mono-font;
+  white-space: pre-wrap;
 
 .dim
   dim-white()
