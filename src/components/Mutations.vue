@@ -5,7 +5,7 @@
       v-for="(mutation, index) in mutations"
       :key="index"
       :name="mutation.name"
-      :color="mutation.color"
+      :color="colors[index % colors.length]"
       :checked="mutation.active"
       @toggle="state => toggle(index, state)"
     />
@@ -16,11 +16,13 @@
 import Checkbox from './Checkbox'
 import VueTypes from 'vue-types'
 
+const colors = ['orange', 'yellow', 'green', 'teal', 'blue']
+
 export default {
   name: 'Mutations',
   components: { Checkbox },
   props: { mutations: VueTypes.array.isRequired },
-  data: () => ({ activeMutationIndices: null }),
+  data: () => ({ colors, activeMutationIndices: null }),
   mounted () {
     this.activeMutationIndices = new Set(
       this.mutations
