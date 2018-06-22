@@ -81,4 +81,9 @@ export default {
       background: megaman
     .name
       background: spiro-disco-ball
+  &.purple
+    .checkbox
+      background: dark-periwinkle
+    .name
+      background: free-speech-blue
 </style>
