@@ -60,5 +60,9 @@ export default [
       const [horiz, ...vert] = text.split(/\s/g)
       return bravoVince(horiz, vert)
     }
+  },
+  {
+    name: '༼ つ ◕_◕ ༽つ Give DIRETIDE ༼ つ ◕_◕ ༽つ',
+    mutator: text => `༼ つ ◕_◕ ༽つ Give ${text.toUpperCase()} ༼ つ ◕_◕ ༽つ`
   }
 ]
