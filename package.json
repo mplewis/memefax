@@ -57,6 +57,7 @@
     "file-loader": "^1.1.5",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "gh-pages": "^1.1.0",
+    "heredocument": "^2.0.2",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "inject-loader": "^3.0.1",
