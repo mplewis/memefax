@@ -19,5 +19,6 @@ describe('wordWrap', function () {
       'thumb at us, sir? SAMPSON (aside to GREGORY): Is',
       'the law of our side if I say “ay”? '
     ])
+    expect(wordWrap(8, 'thisisunwrappable')).to.eql([])
   })
 })

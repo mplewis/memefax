@@ -1,5 +1,8 @@
+function unwrappable (maxLength, words) {
+  return words[0].length > maxLength
+}
 function wordWrapRec (maxLength, words, lines) {
-  if (words.length === 0) {
+  if (words.length === 0 || unwrappable(maxLength, words)) {
     return lines
   }
   const leftovers = []
