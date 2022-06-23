@@ -61,7 +61,7 @@
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "inject-loader": "^3.0.1",
-    "jsdom": "^11.11.0",
+    "jsdom": "^16.5.0",
     "karma": "^2.0.2",
     "karma-coverage": "^1.1.1",
     "karma-jsdom-launcher": "^6.1.3",
